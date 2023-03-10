@@ -18,7 +18,7 @@ export default function Home() {
 
   const fetchRandomQuote = async () => {
     const res = await axios.get(
-      "https://programming-quotesapi.vercel.app/api/random"
+      "/randomQuote"
     );
     return {
       author: res.data.author,
