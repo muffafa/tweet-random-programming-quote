@@ -13,8 +13,6 @@ type Quote = {
 export default function Home() {
   const [quote, setQuote] = useState<Quote | null>();
   const [state, setState] = useState<"loading" | "error" | "done" | null>(null);
-  const quotedTweetUrl =
-    "https://twitter.com/muffafa/status/1633967134874165249?s=20";
 
   const fetchRandomQuote = async () => {
     const res = await axios.get(
@@ -44,7 +42,7 @@ export default function Home() {
     console.log("shareTweet");
     const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
       tweetText
-    )}&url=${encodeURIComponent(quotedTweetUrl)}`;
+    )}`;
     window.open(tweetUrl, "_blank");
   };
 
@@ -61,7 +59,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1 style={{ textAlign: "center" }}>Tweet Random Programmer Quote</h1>
-        <h2 style={{ textAlign: "center", color: "gray"}}>by muffafa</h2>
+        <h2 style={{ textAlign: "center", color: "gray" }}>by muffafa</h2>
         <div className={styles.quoteContainer}>
           {state === "loading" ? (
             <p>loading...</p>
@@ -70,7 +68,7 @@ export default function Home() {
           ) : (
             <div className={styles.quote}>
               <p>{quote?.quote}</p>
-              <p style={{textAlign: "end"}}>{quote?.author}</p>
+              <p style={{ textAlign: "end" }}>{quote?.author}</p>
             </div>
           )}
         </div>
