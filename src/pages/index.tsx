@@ -60,8 +60,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1>Tweet Random Programmer Quote</h1>
-        <h2>by muffafa</h2>
+        <h1 style={{ textAlign: "center" }}>Tweet Random Programmer Quote</h1>
+        <h2 style={{ textAlign: "center", color: "gray"}}>by muffafa</h2>
         <div className={styles.quoteContainer}>
           {state === "loading" ? (
             <p>loading...</p>
@@ -70,7 +70,7 @@ export default function Home() {
           ) : (
             <div className={styles.quote}>
               <p>{quote?.quote}</p>
-              <p>{quote?.author}</p>
+              <p style={{textAlign: "end"}}>{quote?.author}</p>
             </div>
           )}
         </div>
