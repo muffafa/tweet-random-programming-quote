@@ -3,6 +3,9 @@ import Banner from "@/components/Banner";
 import Button from "@/components/Button";
 import Head from "next/head";
 import Card from "../components/Card";
+import Icon from "@mdi/react";
+import { mdiChevronRight, mdiTwitter } from "@mdi/js";
+import Content from "@/components/Content";
 
 export default function Home() {
   return (
@@ -16,15 +19,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <div className="bg-twitter-900 min-h-screen text-white">
-          <Banner onClick={() => null} />
-          <Card />
-          <Button onClick={() => null}>Tweet With Image</Button>
-          <Button onClick={() => null}>Tweet Only Text</Button>
-          <Button onClick={() => null}>Next Quote</Button>
-        </div>
-      </main>
+      <div className="min-h-screen text-white">
+        <Banner />
+        <main>
+          <Content />
+        </main>
+      </div>
     </>
   );
 }
