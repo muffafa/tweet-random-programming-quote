@@ -23,14 +23,6 @@ export default function Home() {
         <Banner />
         <main>
           <Content />
-          <div className="flex justify-center my-5">
-            <iframe className="rounded-xl h-96 sm:h-56"
-              src="https://github.com/sponsors/muffafa/card"
-              title="Sponsor muffafa"
-              height="225"
-              width="600"
-            ></iframe>
-          </div>
         </main>
       </div>
     </>

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import Icon from "@mdi/react";
-import { mdiChevronRight, mdiCircleSmall, mdiClose } from "@mdi/js";
+import { mdiChevronRight, mdiCircleSmall, mdiClose, mdiHeartOutline, mdiHeartPlus } from "@mdi/js";
 import Button from "../Button";
 
 const Banner = () => {
-
   const [isBannerActive, setIsBannerActive] = useState(true);
 
   const goRepoHandler = () => {
@@ -12,12 +11,17 @@ const Banner = () => {
     window.open(repoUrl, "_blank");
   };
 
+  const goSponsorHandler = () => {
+    const sponsorUrl = "https://github.com/sponsors/muffafa";
+    window.open(sponsorUrl, "_blank");
+  };
+
   const closeHeaderHandler = () => {
     setIsBannerActive(false);
   };
 
-  if(!isBannerActive){
-    return<></>;
+  if (!isBannerActive) {
+    return <></>;
   }
 
   return (
@@ -28,10 +32,16 @@ const Banner = () => {
           <Icon path={mdiCircleSmall} size={1} />
           <p>You can contribute to project.</p>
         </div>
-        <Button onClick={goRepoHandler} theme="secondary">
-          Go To Repo
-          <Icon path={mdiChevronRight} size={1} />
-        </Button>
+        <div className="flex space-x-2 justify-center items-center">
+          <Button onClick={goSponsorHandler} textClassName="bg-white text-black">
+            Sponsor
+            <Icon path={mdiHeartPlus} size={1} />
+          </Button>
+          <Button onClick={goRepoHandler} theme="secondary">
+            Go To Repo
+            <Icon path={mdiChevronRight} size={1} />
+          </Button>
+        </div>
         <Button onClick={closeHeaderHandler} theme="icon">
           <Icon path={mdiClose} size={1} />
         </Button>
