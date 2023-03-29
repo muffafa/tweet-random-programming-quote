@@ -59,7 +59,7 @@ const Content = () => {
 
   const exportAsImage = async (el: any, imageFileName: string) => {
     const canvas = await html2canvas(el);
-    const image = canvas.toDataURL("image/png", 1.0);
+    const image = canvas.toDataURL("image/jpeg", 1.0);
     downloadImage(image, imageFileName); 
   };
 
