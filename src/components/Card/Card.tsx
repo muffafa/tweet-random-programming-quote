@@ -48,7 +48,7 @@ const Content = () => {
 const Card = () => {
   return (
     <div className="flex w-full justify-center text-white">
-      <div className="flex sm:aspect-square w-128 p-5 bg-twitter-900">
+      <div className="flex sm:aspect-square w-96 md:w-128 p-5 bg-twitter-900">
         <div className="bg-gradient-to-b from-twitter-500 to-twitter-90 rounded-xl p-6 w-full">
           <div className="container flex flex-col h-full">{Content()}</div>
         </div>
