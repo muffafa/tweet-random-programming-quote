@@ -81,7 +81,7 @@ const Content = () => {
       <div ref={exportRef}>
         <Card />
       </div>
-      <div className="grid grid-cols-8 gap-4 pb-10 mx-4">
+      <div className="grid grid-cols-8 gap-4 pb-10 mx-4 mt-5">
       <div className="col-span-4 md:col-span-2 flex justify-center">
         <Button onClick={() => shareTweet()} textClassName="w-full">
           <Icon path={mdiTwitter} size={1} />
