@@ -8,13 +8,23 @@ const Banner = () => {
 
   const goRepoHandler = () => {
     const repoUrl = "https://github.com/muffafa/tweet-random-programming-quote";
-    window.open(repoUrl, "_blank");
+    createAndClickALink(repoUrl);
   };
 
   const goSponsorHandler = () => {
     const sponsorUrl = "https://github.com/sponsors/muffafa";
-    window.open(sponsorUrl, "_blank");
+    createAndClickALink(sponsorUrl);
   };
+
+  const createAndClickALink = (url: string) => {
+    let a = document.createElement("a");
+    document.body.appendChild(a);
+    a.style.display = "none";
+    a.href = url;
+    a.target = "_blank";
+    a.click();
+    document.body.removeChild(a);
+  }
 
   const closeHeaderHandler = () => {
     setIsBannerActive(false);
