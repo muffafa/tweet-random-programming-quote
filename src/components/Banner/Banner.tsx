@@ -12,26 +12,6 @@ import Button from "../Button";
 const Banner = () => {
   const [isBannerActive, setIsBannerActive] = useState(true);
 
-  const goRepoHandler = () => {
-    const repoUrl = "https://github.com/muffafa/tweet-random-programming-quote";
-    createAndClickALink(repoUrl);
-  };
-
-  const goSponsorHandler = () => {
-    const sponsorUrl = "https://github.com/sponsors/muffafa";
-    createAndClickALink(sponsorUrl);
-  };
-
-  const createAndClickALink = (url: string) => {
-    let a = document.createElement("a");
-    document.body.appendChild(a);
-    a.style.display = "none";
-    a.href = url;
-    a.click();
-    a.rel = "noreferrer";
-    document.body.removeChild(a);
-  };
-
   const closeHeaderHandler = () => {
     setIsBannerActive(false);
   };
@@ -52,15 +32,18 @@ const Banner = () => {
           <a
             href="https://github.com/sponsors/muffafa"
             className="bg-white text-black rounded-md p-3 flex items-center justify-evenly text-xs md:text-base"
-            target={"_blank"}
           >
             Sponsor
             <Icon path={mdiHeartPlus} size={1} />
           </a>
-          <Button onClick={goRepoHandler} theme="secondary">
+          <a
+            href="https://github.com/muffafa/tweet-random-programming-quote"
+            className="bg-transparent border-2 rounded-md p-3 flex items-center justify-evenly text-xs md:text-base"
+            target={"_blank"}
+          >
             Go To Repo
             <Icon path={mdiChevronRight} size={1} />
-          </Button>
+          </a>
         </div>
         <Button onClick={closeHeaderHandler} theme="icon">
           <Icon path={mdiClose} size={1} />
