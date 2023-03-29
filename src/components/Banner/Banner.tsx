@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import Icon from "@mdi/react";
-import { mdiChevronRight, mdiCircleSmall, mdiClose, mdiHeartOutline, mdiHeartPlus } from "@mdi/js";
+import {
+  mdiChevronRight,
+  mdiCircleSmall,
+  mdiClose,
+  mdiHeartOutline,
+  mdiHeartPlus,
+} from "@mdi/js";
 import Button from "../Button";
 
 const Banner = () => {
@@ -24,7 +30,7 @@ const Banner = () => {
     a.click();
     a.rel = "noreferrer";
     document.body.removeChild(a);
-  }
+  };
 
   const closeHeaderHandler = () => {
     setIsBannerActive(false);
@@ -43,10 +49,14 @@ const Banner = () => {
           <p>You can contribute to project.</p>
         </div>
         <div className="flex space-x-2 justify-center items-center">
-          <Button onClick={goSponsorHandler} textClassName="bg-white text-black">
+          <a
+            href="https://github.com/sponsors/muffafa"
+            className="bg-white text-black rounded-md p-3 flex items-center justify-evenly text-xs md:text-base"
+            target={"_blank"}
+          >
             Sponsor
             <Icon path={mdiHeartPlus} size={1} />
-          </Button>
+          </a>
           <Button onClick={goRepoHandler} theme="secondary">
             Go To Repo
             <Icon path={mdiChevronRight} size={1} />
