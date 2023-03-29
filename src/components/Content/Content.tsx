@@ -96,8 +96,8 @@ const Content = () => {
       </div>
       <div className="col-span-4 md:col-span-2 flex justify-center">
         <Button onClick={() => copyQuote()} textClassName="w-full">
-          Copy Quote
           <Icon path={mdiContentCopy} size={1} />
+          Copy Quote
         </Button>
       </div>
       <div className="col-span-4 md:col-span-2 flex justify-center">
