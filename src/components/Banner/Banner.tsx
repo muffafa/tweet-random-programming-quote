@@ -21,8 +21,9 @@ const Banner = () => {
     document.body.appendChild(a);
     a.style.display = "none";
     a.href = url;
-    a.target = "_blank";
+    a.target = "";
     a.click();
+    a.rel = "noreferrer";
     document.body.removeChild(a);
   }
 
